@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#121b2c" />
+    <meta name="description" content="Sistema de mesas, pedidos, cocina y stock de Don Pedro." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/views.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <title>Don Pedro POS</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#mesas" aria-label="Don Pedro, inicio">
+          <span class="brand-mark">DP</span>
+          <span>
+            <strong>Don Pedro</strong>
+            <small id="page-context">Gestión del salón</small>
+          </span>
+        </a>
+
+        <nav class="main-nav" aria-label="Módulos principales">
+          <button class="nav-item active" data-view="mesas">
+            <span class="nav-icon" aria-hidden="true">▦</span>
+            Mesas
+          </button>
+          <button class="nav-item" data-view="pedido">
+            <span class="nav-icon" aria-hidden="true">＋</span>
+            Pedido
+            <span class="nav-count hidden" id="cart-count">0</span>
+          </button>
+          <button class="nav-item" data-view="cocina">
+            <span class="nav-icon" aria-hidden="true">♨</span>
+            Cocina
+            <span class="nav-count" id="kitchen-count">0</span>
+          </button>
+          <button class="nav-item" data-view="admin">
+            <span class="nav-icon" aria-hidden="true">⌁</span>
+            Administración
+          </button>
+        </nav>
+
+        <div class="topbar-actions">
+          <button id="install-button" class="button button-ghost button-small hidden">Instalar app</button>
+          <div class="connection" id="connection-status" title="Estado de la conexión">
+            <span class="status-dot"></span>
+            <span>Conectando</span>
+          </div>
+          <time id="clock">--:--</time>
+        </div>
+      </header>
+
+      <main id="app" tabindex="-1">
+        <section class="loading-screen" aria-live="polite">
+          <span class="loader"></span>
+          <p>Preparando el salón…</p>
+        </section>
+      </main>
+    </div>
+
+    <nav class="bottom-nav" aria-label="Navegación móvil">
+      <button class="nav-item active" data-view="mesas"><span>▦</span><small>Mesas</small></button>
+      <button class="nav-item" data-view="pedido"><span>＋</span><small>Pedido</small></button>
+      <button class="nav-item" data-view="cocina"><span>♨</span><small>Cocina</small></button>
+      <button class="nav-item" data-view="admin"><span>⌁</span><small>Admin</small></button>
+    </nav>
+
+    <div id="modal-root"></div>
+    <div id="toast-root" class="toast-stack" aria-live="polite" aria-atomic="true"></div>
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
