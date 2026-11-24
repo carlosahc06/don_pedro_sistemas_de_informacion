@@ -1,4 +1,4 @@
-# Don Pedro - avance de la semana 4
+# Don Pedro - avance de la semana 15
 
 Prototipo de las vistas de mesas, comandero y cocina con persistencia en localStorage.
 
