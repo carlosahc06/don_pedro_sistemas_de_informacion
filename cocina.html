@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cocina | Don Pedro</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="app.js" defer></script>
+</head>
+<body id="vista_cocina">
+  <header class="barra-superior">
+    <a class="marca" href="index.html">
+      <span class="marca-logo">DP</span>
+      <span><strong>Vista de la Cocina</strong><small>Don Pedro</small></span>
+    </a>
+    <nav class="navegacion">
+      <a href="index.html">Mesas</a>
+      <a href="mozo.html">Comandero</a>
+      <a href="cocina.html" class="activo">Cocina</a>
+    </nav>
+    <span class="indicador"><span></span> Demo</span>
+  </header>
+
+  <main class="pagina pagina-cocina">
+    <div class="distribucion-cocina">
+      <section class="ordenes">
+        <div class="encabezado-seccion">
+          <div><p class="sobretexto">Cocina</p><h1>Órdenes activas</h1></div>
+          <div class="filtro">
+            <select id="filtro-orden">
+              <option value="Todas">Todas</option>
+              <option value="Nuevo">Nuevas</option>
+              <option value="Preparando">Preparando</option>
+              <option value="Listo">Listas</option>
+            </select>
+          </div>
+        </div>
+        <div id="ordenes-cocina" class="lista-ordenes"></div>
+        <p id="mensaje-cocina" class="mensaje-texto"></p>
+        <p id="estado-guardado" class="mensaje-texto"></p>
+      </section>
+
+      <aside class="estacion">
+        <h2>Vista de estación</h2>
+        <div class="indicadores-estacion">
+          <div><span>Órdenes listas</span><strong id="ordenes-listas">0</strong></div>
+          <div><span>Tiempo estimado</span><strong id="tiempo-estimado">0m</strong></div>
+        </div>
+        <h3>En cola</h3>
+        <div id="cola-cocina" class="cola"></div>
+        <div class="acciones-estacion">
+          <p id="orden-seleccionada">Selecciona una orden para completarla.</p>
+          <button id="completar-orden" class="boton boton-oscuro boton-ancho" type="button" disabled>Completar</button>
+          <button class="boton boton-claro boton-ancho" type="button" disabled>Llamar al mesero</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

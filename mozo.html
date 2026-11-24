@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comandero | Don Pedro</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="app.js" defer></script>
+</head>
+<body id="vista_mozo">
+  <header class="barra-superior">
+    <a class="marca" href="index.html">
+      <span class="marca-logo">DP</span>
+      <span><strong>Don Pedro · Comandero</strong><small>Registro de pedidos</small></span>
+    </a>
+    <nav class="navegacion">
+      <a href="index.html">Mesas</a>
+      <a href="mozo.html" class="activo">Comandero</a>
+      <a href="cocina.html">Cocina</a>
+    </nav>
+    <span class="indicador"><span></span> Demo</span>
+  </header>
+
+  <main class="pagina pagina-comandero">
+    <div class="distribucion-menu">
+      <section>
+        <div class="encabezado-seccion">
+          <div><p class="sobretexto">Comandero</p><h1>Menú</h1></div>
+          <div class="buscador">
+            <input id="buscar-producto" type="search" placeholder="Buscar plato">
+          </div>
+        </div>
+        <div class="categorias">
+          <button class="pestana activa" type="button" data-cat="Platos de fondo">Platos de fondo</button>
+          <button class="pestana" type="button" data-cat="Entradas">Entradas</button>
+          <button class="pestana" type="button" data-cat="Bebidas">Bebidas</button>
+          <button class="pestana" type="button" data-cat="Postres">Postres</button>
+        </div>
+        <div id="lista-productos" class="cuadricula-productos"></div>
+        <p id="sin-productos" class="mensaje-vacio" hidden>No se encontraron productos.</p>
+      </section>
+
+      <aside class="columna-pedido">
+        <div id="mensaje-exito" class="aviso-exito" hidden>
+          <span class="icono-exito">✓</span>
+          <div><strong>¡Pedido registrado!</strong><p id="detalle-exito"></p></div>
+        </div>
+        <section class="panel-blanco">
+          <div class="panel-encabezado">
+            <div><p class="sobretexto">Comanda</p><h2>Pedido actual</h2></div>
+            <span id="cantidad-productos" class="insignia">0 platos</span>
+          </div>
+          <form id="formulario-pedido" novalidate>
+            <div class="campos-pedido">
+              <div>
+                <label for="mesa-pedido">Mesa</label>
+                <select id="mesa-pedido">
+                  <option value="">Seleccionar</option>
+                  <option value="1">Mesa 1</option><option value="2">Mesa 2</option>
+                  <option value="3">Mesa 3</option><option value="4">Mesa 4</option>
+                  <option value="5">Mesa 5</option><option value="6">Mesa 6</option>
+                  <option value="7">Mesa 7</option><option value="8">Mesa 8</option>
+                  <option value="9">Mesa 9</option><option value="10">Mesa 10</option>
+                  <option value="11">Mesa 11</option><option value="12">Mesa 12</option>
+                </select>
+              </div>
+              <div>
+                <label for="personas-pedido">Comensales</label>
+                <input id="personas-pedido" type="number" min="1" max="20" placeholder="2">
+              </div>
+            </div>
+            <div id="carrito" class="lista-carrito"></div>
+            <p id="error-pedido" class="error"></p>
+            <div class="total-pedido"><span>Total</span><strong id="total-pedido">S/ 0.00</strong></div>
+            <button class="boton boton-oscuro boton-ancho" type="submit">Registrar pedido</button>
+          </form>
+        </section>
+        <section class="panel-registros">
+          <h2>Pedidos registrados</h2>
+          <div id="pedidos-registrados"></div>
+        </section>
+        <p id="estado-guardado" class="mensaje-texto"></p>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

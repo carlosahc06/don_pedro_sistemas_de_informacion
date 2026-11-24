@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mesas | Don Pedro</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="app.js" defer></script>
+</head>
+<body id="vista_mesas">
+  <header class="barra-superior">
+    <a class="marca" href="index.html">
+      <span class="marca-logo">DP</span>
+      <span><strong>Don Pedro</strong><small>Hola, Carlos</small></span>
+    </a>
+    <nav class="navegacion">
+      <a href="index.html" class="activo">Mesas</a>
+      <a href="mozo.html">Comandero</a>
+      <a href="cocina.html">Cocina</a>
+    </nav>
+    <span class="indicador"><span></span> Demo</span>
+  </header>
+
+  <main class="pagina pagina-mesas">
+    <div class="encabezado-seccion">
+      <div>
+        <p class="sobretexto">Salón</p>
+        <h1>Mesas</h1>
+      </div>
+      <div class="leyenda">
+        <span><i class="punto-libre"></i> Libre</span>
+        <span><i class="punto-ocupada"></i> Ocupada</span>
+      </div>
+    </div>
+
+    <p class="introduccion">Selecciona una mesa libre para registrar a sus comensales.</p>
+    <div id="lista-mesas" class="cuadricula-mesas"></div>
+
+    <section id="panel-mesa" class="panel-formulario" hidden>
+      <div class="panel-encabezado">
+        <div>
+          <p class="sobretexto">Nueva atención</p>
+          <h2 id="titulo-mesa">Abrir mesa</h2>
+        </div>
+        <button class="boton-cerrar" id="cerrar-mesa" type="button">×</button>
+      </div>
+      <form id="formulario-mesa" novalidate>
+        <label for="comensales">Cantidad de comensales</label>
+        <input id="comensales" type="number" min="1" max="20" placeholder="Ej. 2">
+        <p id="error-comensales" class="error"></p>
+        <button class="boton boton-oscuro" type="submit">Abrir mesa</button>
+      </form>
+    </section>
+    <p id="mensaje-mesas" class="mensaje-texto"></p>
+    <p id="estado-guardado" class="mensaje-texto"></p>
+  </main>
+</body>
+</html>
